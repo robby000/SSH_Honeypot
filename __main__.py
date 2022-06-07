@@ -18,7 +18,7 @@ logging.basicConfig(filename='Honeypot_ssh.log',
                     level=logging.INFO)
 
 # Declare constants
-IP = socket.gethostbyname(socket.gethostname())  # Loopback IP for now can change this to public in future
+IP = socket.gethostbyname(socket.gethostname())  # Loopback IP is the default IP that the honeypot runs on
 
 platform = platform.system()  # Get the current platform (Linux, Windows)
 
@@ -47,7 +47,6 @@ if __name__ == '__main__':
                         action="store")
     parser.add_argument("--bind", "-b", help="The address to bind the server to (defaults to loopback). In a cloud "
                                              "instance it should bind to 0.0.0.0", default=IP, type=str, action="store")
-    parser.add_argument("--ports", "-ps", help="A")
     args = parser.parse_args()
     honeypot = HoneyPot(args.port, args.bind)
     honeypot.run()

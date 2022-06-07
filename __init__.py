@@ -1,9 +1,9 @@
 import csv
 from socket import socket
-import paramiko  # Need to install
-import socket  # Import socket module
+import paramiko  # Need to install using the command "sudo apt-get install -y python3-paramiko"
+import socket
 import threading
-import logging  # To write logs
+import logging
 import traceback
 import sys
 from os import getcwd
@@ -14,7 +14,7 @@ from commands import handle_cmd
 from server_config import SshServer
 
 ########################################################################################################################
-# Declare Constants
+# Declare Constants and lists
 
 Ip_list = "ip_list"
 
@@ -22,7 +22,7 @@ Ip_list_read = []
 
 location = getcwd()  # Create relative path for files
 
-# SSH host key
+# Import SSH host key
 HOST_KEY = paramiko.RSAKey(filename='server_honey.key')
 # Banner for SSH entry
 ENTRY_BANNER = "SSH-2.0-OpenSSH_7.7"
@@ -38,14 +38,14 @@ with open("ip_list.csv", newline="") as i:
 
 ########################################################################################################################
 
-# Make a separate list of IPs
+# Create a separate list of IPs
 def write_ips(ip):
     if platform == "Windows":
         csv_file = location + "\\" + Ip_list + ".csv"  # get file path
     else:
         csv_file = location + "/" + Ip_list + ".csv"  # get file path
-    with open(csv_file, 'a', encoding='UTF8') as i:
-        csv_out = csv.writer(i)
+    with open(csv_file, 'a', encoding='UTF8') as j:
+        csv_out = csv.writer(j)
         csv_out.writerow([ip])
 
 
@@ -173,10 +173,11 @@ class HoneyPot(object):
                     client, addr = listener.accept()
                     # If IP has already connected then refuse the connection
                     if addr[0] in Ip_list_read:
+                        # Close the socket to disconnect known IP
                         listener.close()
                         logging.info(f"Refused connection from known IP = {addr[0]}")
                         print(f"Refused connection from known IP = {addr[0]}")
-                        # I now need to restart the socket
+                        # Restart the socket
                         listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                         listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                         listener.bind((self.ip, self.port))

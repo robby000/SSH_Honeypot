@@ -1,3 +1,5 @@
+#  Declare constants to send to client in response to commands
+
 password_list = "Passwords:\n\r1 = Q9mtw-%H\n\r2 = 9QuXU!dY\n\r3 = 64vXm(a@\n\r4 = >x3EM)(-\n\r5 = m3/^-HK9\n\r" \
                 "6 = qLk[]4Ya\n\r7 = MN/&Zf!9\n\r8 = yC[Ep5eq\n\r9 = 9=p/t!DC\n\r10 = _4PYLwVZ\n\r11 = .j6QB5bK\n\r" \
                 "12 = vjL3_NSE\n\r13 = 6T=c^Rh]\n\r14 = =7nQ69>D\n\r15 = ByMk5u)s\n\r16 = 3&Q$bE!x\n\r" \
