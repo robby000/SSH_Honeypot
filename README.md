@@ -35,7 +35,7 @@ To run the honeypot, use the command:
 
 `python3 __main__.py`
 
-This allows for two arguments
+This allows for two arguments:
 - `-b` To bind it to the IP of choice (The default is the local loopback address)
 - `-p` To bind it to the port of choice (The default is port 4444)
 
