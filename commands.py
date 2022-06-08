@@ -46,8 +46,10 @@ def handle_cmd(cmd, chan):
         response = password_list
     elif cmd.startswith("cat us"):
         response = user_list
-    elif cmd.startswith("cat pr"):
+    elif cmd.startswith("cat pri"):
         response = key_list
+    elif cmd.startswith("cat /proc/cpuinfo"):  # This is the most common command requested
+        response = "24"
     else:
         response = "Error: No recognised command received"
 

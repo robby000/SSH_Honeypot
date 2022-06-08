@@ -83,7 +83,7 @@ class HoneyPot(object):
                 logging.error(f"Server failed to start SSH connection with client - {addr}")
                 print(f"Server failed to start SSH connection with client - {addr}")
 
-            # Wait for auth with a timeout of 30 seconds
+            # Wait for auth with a timeout of X seconds
             channel = tran.accept(100)
             if channel is None:
                 logging.error(f"No channel was received from {addr}")
