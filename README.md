@@ -2,7 +2,7 @@
 
 ## This is an SSH research honeypot written in Python.
 \
-The primary purpose of this honeypot is to gather information regarding potential bad actors and block their IPs so they can't reconnect. 
+The primary purpose of this honeypot is to gather information regarding potential bad actors and block their IPs so they cannot reconnect. 
 This information includes:
 - Client IP and port used
 - SSH version used by the client
@@ -37,7 +37,7 @@ To run the honeypot, use the command:
 
 This allows for two arguments
 - `-b` To bind it to the IP of choice (The default is the local loopback address)
-- `-p` To bind it to the port of choice (The default is port 4444)\
+- `-p` To bind it to the port of choice (The default is port 4444)
 
 ### Further Configuration
 
