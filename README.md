@@ -12,9 +12,10 @@ This information includes:
 - Any commands received
 - Failed connections
 
-All this information is in a log file named "Honeypot_ssh.log"\
-\
-\
+All this information is in a log file named "Honeypot_ssh.log"
+
+### Setup
+
 It uses the [Paramiko](https://github.com/paramiko/paramiko) Python SSH protocol library.
 To install the Pramiko library on a Ubuntu device, please use the command:
 
@@ -35,6 +36,13 @@ To run the honeypot, use the command:
 `python3 __main__.py`
 
 This allows for two arguments
-1. `-b` To bind it to the IP of choice (The default is the local loopback address)
-2. `-p` To bind it to the port of choice (The default is port 4444)
+- `-b` To bind it to the IP of choice (The default is the local loopback address)
+- `-p` To bind it to the port of choice (The default is port 4444)\
+
+### Further Configuration
+
+
+This iptables command will redirect all traffic from the port 1 to 5000 to port 4444
+
+`sudo iptables -t nat -A PREROUTING -p tcp --dport 1:5000 -j REDIRECT --to-ports 4444`
 
