@@ -17,7 +17,7 @@ All this information is in a log file named "Honeypot_ssh.log"
 ### Setup
 
 It uses the [Paramiko](https://github.com/paramiko/paramiko) Python SSH protocol library.
-To install the Pramiko library on a Ubuntu device, please use the command:
+To install the Pramiko library on a Ubuntu device, use the command:
 
 `sudo apt-get install -y python3-paramiko`\
 \
