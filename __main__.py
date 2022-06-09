@@ -23,8 +23,8 @@ IP = socket.gethostbyname(socket.gethostname())  # Loopback IP is the default IP
 platform = platform.system()  # Get the current platform (Linux, Windows)
 
 ########################################################################################################################
-
 # Check that this is not run as root or admin as this can lead to privilege escalation
+
 if platform == "Linux":  # If using Linux
     if os.geteuid() == 0:
         print("Do not run this honeypot as root as it can lead to privilege escalation")

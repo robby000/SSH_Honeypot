@@ -35,10 +35,10 @@ with open("ip_list.csv", newline="") as i:
     for row in csv.reader(i):
         Ip_list_read.append(row[0])
 
-
 ########################################################################################################################
 
-# Create a separate list of IPs
+
+# Create a csv file with a list of previously connected IPs
 def write_ips(ip):
     if platform == "Windows":
         csv_file = location + "\\" + Ip_list + ".csv"  # get file path
@@ -47,6 +47,8 @@ def write_ips(ip):
     with open(csv_file, 'a', encoding='UTF8') as j:
         csv_out = csv.writer(j)
         csv_out.writerow([ip])
+
+########################################################################################################################
 
 
 class HoneyPot(object):
