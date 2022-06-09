@@ -44,8 +44,8 @@ This allows for two arguments:
 
 This iptables command will redirect all traffic from the port 1 to 5000 to port 4444
 
-`sudo iptables -t nat -A PREROUTING -p tcp --dport 1:5000 -j REDIRECT --to-ports 4444`/
-/
-/
+`sudo iptables -t nat -A PREROUTING -p tcp --dport 1:5000 -j REDIRECT --to-ports 4444`\
+\
+\
 For any questions or comments please email me @ `cyberpings@gmail.com`
 
