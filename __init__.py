@@ -36,9 +36,9 @@ with open("ip_list.csv", newline="") as i:
         Ip_list_read.append(row[0])
 
 ########################################################################################################################
-
-
 # Create a csv file with a list of previously connected IPs
+
+
 def write_ips(ip):
     if platform == "Windows":
         csv_file = location + "\\" + Ip_list + ".csv"  # get file path
