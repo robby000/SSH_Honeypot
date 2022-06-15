@@ -22,7 +22,7 @@ To install the Pramiko library on a Ubuntu device, use the command:
 `sudo apt-get install -y python3-paramiko`\
 \
 \
-Then one must setup the servers key using the following commands:
+Then one must setup the server's key using the following commands:
 
 `ssh-keygen -t rsa -f server_honey.key`
 
